@@ -1,11 +1,36 @@
-// Mobile menu toggle
+// Set your contact email here
+const CONTACT_EMAIL = 'hetvishukla2@gmail.com'; // TODO: replace with your actual email
+
+// Mobile menu toggle + accessibility + behavior
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    const toggleMenu = (open) => {
+        const willOpen = open !== undefined ? open : !navMenu.classList.contains('active');
+        navMenu.classList.toggle('active', willOpen);
+        hamburger.classList.toggle('active', willOpen);
+        hamburger.setAttribute('aria-expanded', String(willOpen));
+        document.body.classList.toggle('no-scroll', willOpen);
+    };
+
+    hamburger.addEventListener('click', () => toggleMenu());
+
+    // Close menu when a nav link is clicked (on mobile)
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') toggleMenu(false);
+    });
+
+    // Reset state on resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) toggleMenu(false);
+    });
+}
 
 // Smooth scrolling for navigation
 function scrollToSection(sectionId) {
@@ -160,31 +185,76 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Contact form functionality
+// Contact form functionality -> send via email client (mailto)
 document.getElementById('projectForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
-    
-    // Show success message
-    alert('Thank you for your message! We\'ll get back to you soon.');
-    
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Fallback if CONTACT_EMAIL is not set
+    if (!CONTACT_EMAIL || CONTACT_EMAIL === 'your-email@example.com') {
+        alert('Contact email is not configured yet. Please set CONTACT_EMAIL in portfolio.js.');
+        return;
+    }
+
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+    // Open default email client
+    window.location.href = mailtoLink;
+
+    // Optional UX feedback toast
+    setTimeout(() => {
+        showToast('Opening your email app to send the message...');
+    }, 200);
+
     // Reset form
     this.reset();
 });
 
-// Smooth scroll for CTA button
-document.querySelector('.cta-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector('.form-container').scrollIntoView({
-        behavior: 'smooth'
+// Smooth scroll for CTA button (only if it's an in-page link)
+const ctaBtn = document.querySelector('.cta-button');
+if (ctaBtn) {
+    ctaBtn.addEventListener('click', function(e) {
+        const href = ctaBtn.getAttribute('href') || '';
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            document.querySelector('.form-container')?.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        // If it's a mailto link, allow default behavior (no preventDefault)
     });
-});
+}
+
+// Lightweight toast notification
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '24px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.background = 'rgba(0,0,0,0.8)';
+    toast.style.color = '#fff';
+    toast.style.padding = '10px 14px';
+    toast.style.borderRadius = '8px';
+    toast.style.fontSize = '14px';
+    toast.style.zIndex = '9999';
+    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.25)';
+    document.body.appendChild(toast);
+    setTimeout(() => {
+        toast.style.transition = 'opacity 300ms ease';
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 320);
+    }, 2000);
+}
 
 // Add parallax effect to floating elements
 window.addEventListener('mousemove', function(e) {

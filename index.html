@@ -5,16 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hetvi Shukla - Portfolio</title>
+    <link rel="icon" type="image/png" href="icon.png">
+
     <link rel="stylesheet" href="portfolio.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Primary">
         <div class="nav-container">
             <div class="nav-logo">
-                <span>Hetvi Shukla</span>
+                <a href="#home" class="logo-link" aria-label="Go to home">
+                    <img src="icon.png" alt="Hetvi Icon" srcset="" loading="lazy" decoding="async">
+                    
+                </a>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
@@ -22,11 +27,11 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="hamburger" id="hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
         </div>
     </nav>
 
@@ -39,10 +44,7 @@
                         <span class="name">HETVI SHUKLA</span>
                     </h1>
                     <p class="hero-description">
-                        I’m a developer currently focused on mobile app development using React Native. I have
-                        experience in web development with HTML, CSS, and JavaScript, and I'm also learning cloud
-                        computing with AWS to build scalable applications. I'm also passionate about UI/UX design,
-                        aiming to create intuitive and user-friendly digital experiences.
+                      Building smooth and user-focused digital experiences is my passion as a creative UI/UX designer and developer. In my current role as a GDG UI/UX Tenure 2025–26, I have worked on web and mobile applications using HTML, CSS, JavaScript, and React Native. I have also investigated cloud technologies (AWS) to create modern and scalable solutions.
                     </p>
                     <div class="hero-buttons">
                         <button class="btn btn-primary" onclick="scrollToSection('contact')">
@@ -57,7 +59,7 @@
         </div>
     </section>
 
-      <!-- Portfolio Section -->
+    <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="portfolio-container">
             <div class="portfolio-content">
@@ -71,7 +73,6 @@
                         <button class="filter-btn" data-filter="ui">UI</button>
                         <button class="filter-btn" data-filter="websites">Websites</button>
                         <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                        
                     </div>
                 </div>
 
@@ -82,7 +83,7 @@
                     <div class="portfolio-item ui" data-category="ui">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="UIUX 1.png" alt="UI Design Project 1">
+                                <img src="UIUX 1.png" alt="UI Design Project 1" loading="lazy" decoding="async">
 
                                 <div class="project-overlay">
                                     <div class="project-info">
@@ -101,7 +102,8 @@
                     <div class="portfolio-item ui" data-category="ui">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="erasebg-transformed.png" alt="UI Design Project 2">
+                                <img src="erasebg-transformed.png" alt="UI Design Project 2" loading="lazy" decoding="async">
+
                                 <div class="project-overlay">
                                     <div class="project-info">
                                         <h3>MObile UI</h3>
@@ -115,11 +117,29 @@
                             </div>
                         </div>
                     </div>
+                     <div class="portfolio-item ui" data-category="ui">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="UIUX 4.png" alt="UI Design Project 2" loading="lazy" decoding="async">
+
+                                <div class="project-overlay">
+                                    <div class="project-info">
+                                        <h3>Website UI</h3>
+                                        <p>Built website mockups in Figma using a pre-designed template.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Figma</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="portfolio-item ui" data-category="ui">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="UIUX 2.png" alt="UI Design Project 3">
+                                <img src="UIUX 2.png" alt="UI Design Project 3" loading="lazy" decoding="async">
+
                                 <div class="project-overlay">
                                     <div class="project-info">
                                         <h3>Navaratri Store</h3>
@@ -146,7 +166,6 @@
                                     </video>
                                 </div>
 
-
                                 <div class="project-overlay">
                                     <div class="project-info">
                                         <h3>Ice Cream Flavors Showcase</h3>
@@ -164,7 +183,8 @@
                     <div class="portfolio-item websites" data-category="websites">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="website 1.png" alt="Website Project 1">
+                                <img src="website 1.png" alt="Website Project 1" loading="lazy" decoding="async">
+
                                 <div class="project-overlay">
                                     <div class="project-info">
                                         <h3>CodeLoom - Code Editor</h3>
@@ -183,7 +203,8 @@
                     <div class="portfolio-item websites" data-category="websites">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="website 2.png" alt="Website Project 2">
+                                <img src="website 2.png" alt="Website Project 2" loading="lazy" decoding="async">
+
                                 <div class="project-overlay">
                                     <div class="project-info">
                                         <h3>Movie Search</h3>
@@ -203,16 +224,39 @@
                     <div class="portfolio-item websites" data-category="websites">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="website 3.png" alt="Website Project 2">
+                                <img src="website 3.png" alt="Website Project 2" loading="lazy" decoding="async">
+
                                 <div class="project-overlay">
                                     <div class="project-info">
-                                        <h3>Mindro</h3>
-                                        <p>Smart Web app that helps students plan and track their studies efficiently
+                                        <h3>Zinkup</h3>
+                                        <p>Create or join real-time meetings with video and audio conferencing
                                         </p>
                                         <div class="project-tags">
-                                            <span class="tag">HTML</span>
-                                            <span class="tag">CSS</span>
-                                            <span class="tag">JS</span>
+                                            <span class="tag">React</span>
+                                            <span class="tag">Next.js</span>
+                                            <span class="tag">StreamIO</span>
+                                            <span class="tag">Clerk</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item websites" data-category="websites">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="website 4.png" alt="Website Project 2" loading="lazy" decoding="async">
+
+                                <div class="project-overlay">
+                                    <div class="project-info">
+                                        <h3>Mockveda</h3>
+                                        <p>Platform with Aptitude, Technical, GD, and AI Interview sections
+                                        </p>
+                                        <div class="project-tags">
+                                            <span class="tag">React</span>
+                                            <span class="tag">Next.js</span>
+                                            <span class="tag">Drizzle ORM</span>
+                                            <span class="tag">Clerk</span>
                                         </div>
                                     </div>
                                 </div>
@@ -220,13 +264,12 @@
                         </div>
                     </div>
 
-
-
                     <!-- Mobile App Projects -->
                     <div class="portfolio-item mobile" data-category="mobile">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="mobile 1.png" alt="Mobile App Project 1">
+                                <img src="mobile 1.png" alt="Mobile App Project 1" loading="lazy" decoding="async">
+
                                 <div class="project-overlay">
                                     <div class="project-info">
                                         <h3>Agromart App</h3>
@@ -245,10 +288,10 @@
                     <div class="portfolio-item mobile" data-category="mobile">
                         <div class="project-card">
                             <div class="project-image">
-                                
+
                                 <img src="mobile 4.png"
-                                    alt="Mobile App Project 2">
-                            
+                                    alt="Mobile App Project 2" loading="lazy" decoding="async">
+
                                 <div class="project-overlay">
                                     <div class="project-info">
                                         <h3>Job Search App</h3>
@@ -257,7 +300,26 @@
                                             <span class="tag">React Native</span>
                                             <span class="tag">Firebase</span>
                                             <span class="tag">JSearch API</span>
-                                        </div>>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item mobile" data-category="mobile">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="mobile 3.png" alt="Mobile App Project 1" loading="lazy" decoding="async">
+
+                                <div class="project-overlay">
+                                    <div class="project-info">
+                                        <h3>Home Service App</h3>
+                                        <p>Links users with verified home service providers </p>
+                                        <div class="project-tags">
+                                            <span class="tag">React Native</span>
+                                            <span class="tag">Clerk</span>
+                                            <span class="tag">Hygraph</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -298,7 +360,7 @@
                             <div class="skills-list">
                                 <div class="skill-item">Figma</div>
                                 <div class="skill-item">Canva</div>
-                                <div class="skill-item">Adobe XD</div>
+                               
                             </div>
                         </div>
 
@@ -318,7 +380,7 @@
                             <h3 class="category-title">Backend</h3>
                             <div class="skills-list">
                                 <div class="skill-item">Python</div>
-                                <div class="skill-item">MongoDB</div>
+                                <div class="skill-item">Suphabase</div>
                                 
                             </div>
                         </div>
@@ -328,6 +390,7 @@
                             <h3 class="category-title">Cloud</h3>
                             <div class="skills-list">
                                 <div class="skill-item">AWS</div>
+                                <div class="skill-item">Google Cloud</div>
                                 
                             </div>
                         </div>
@@ -380,7 +443,7 @@
                     Let's bring your vision to life. Whether it's a web application, mobile app, or digital solution,
                     we're here to help you create something amazing.
                 </p>
-                <a href="#contact" class="cta-button">Let's Get Started</a>
+                <a href="mailto:hetvishukla2@gmail.com" class="cta-button">Let's Get Started</a>
             </div>
 
             <div class="right-section">
@@ -457,28 +520,19 @@
             <div class="footer-section">
                 <h3 class="footer-title">Connect With Me</h3>
                 <div class="social-links">
-                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/HetviShukla18 " class="social-link" target="_blank" rel="noopener noreferrer">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.607.069-.607 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.833.091-.647.35-1.088.636-1.338-2.221-.253-4.555-1.111-4.555-4.943 0-1.091.39-1.985 1.029-2.684-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 7.07a9.56 9.56 0 012.506.337c1.909-1.295 2.748-1.026 2.748-1.026.546 1.378.203 2.397.1 2.65.64.699 1.028 1.593 1.028 2.684 0 3.841-2.337 4.687-4.566 4.936.359.309.678.919.678 1.852 0 1.337-.012 2.417-.012 2.747 0 .268.18.58.688.481A10.012 10.012 0 0022 12c0-5.523-4.477-10-10-10z" />
                         </svg>
                     </a>
-                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/hetvi-shukla-031641299/                                                                                               " class="social-link" target="_blank" rel="noopener noreferrer">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
-                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/hetvishukla18?utm_source=qr&igsh=MWg0Z2pmZDBod2M3NA== " class="social-link" target="_blank" rel="noopener noreferrer">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 16.892c-2.102.144-6.784.144-8.883 0C5.282 16.736 5.017 15.622 5 12c.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0C18.718 7.264 18.982 8.378 19 12c-.018 3.629-.285 4.736-2.559 4.892zM10 9.658l4.917 2.338L10 14.342V9.658z" />
+                            <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm6.5-1.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                         </svg>
                     </a>
                 </div>
