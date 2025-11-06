@@ -45,7 +45,7 @@ function scrollToSection(sectionId) {
 // Download CV function
 function downloadCV() {
     const link = document.createElement('a');
-    link.href = 'Hetvi Shukla - Resume.pdf';  // Path to your PDF file
+    link.href = 'Hetvi Shukla- Resume.pdf';  // Path to your PDF file
     link.download = 'Hetvi_Shukla.pdf';   // Name the downloaded file
     document.body.appendChild(link);
     link.click();
